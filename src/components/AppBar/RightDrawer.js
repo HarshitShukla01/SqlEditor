@@ -50,7 +50,8 @@ export default function RightDrawer() {
   
   
   return (
-    <div style={{ color: "white" }}>
+    <div style={{ color: "white",fontSize: "18px",display: "flex",alignItems: "center"}}>
+    <span style={{fontSize:"20px"}}> TABLES </span>
       <IconButton
         size="large"
         edge="false"
@@ -59,7 +60,7 @@ export default function RightDrawer() {
         sx={{ mr: 2 }}
         onClick={toggleDrawer(true)}
       >
-        <MenuIcon />
+       <MenuIcon />
       </IconButton>
       <Drawer anchor="right" open={state} onClose={toggleDrawer(false)}>
         <Box

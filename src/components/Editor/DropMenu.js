@@ -27,7 +27,7 @@ export default function DropMenu({setTheme}) {
         variant="outlined"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        sx={{marginLeft:"10px",marginTop:"3px",paddingRight:"4px"}}
+        sx={{marginLeft:"10px",marginTop:"1px",paddingRight:"4px",border: "2px solid",fontWeight: "bold",paddingBottom:"2px"}}
       >
         Theme <ArrowDropDownIcon />
       </Button>
@@ -40,12 +40,12 @@ export default function DropMenu({setTheme}) {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem style={{backgroundColor: (colorId == "github" ? "lightblue" : "white")}} onClick={() =>{handleClose(); setColorSelected("github");}}>Github</MenuItem>
-        <MenuItem style={{backgroundColor: (colorId == "eclipse" ? "lightblue" : "white")}} onClick={() =>{handleClose(); setColorSelected("eclipse");}}>Eclipse</MenuItem>
-        <MenuItem style={{backgroundColor: (colorId == "dracula" ? "lightblue" : "white")}} onClick={() =>{handleClose(); setColorSelected("dracula");}}>Dracula</MenuItem>
-        <MenuItem style={{backgroundColor: (colorId == "cobalt" ? "lightblue" : "white")}} onClick={() =>{handleClose(); setColorSelected("cobalt");}}>Cobalt</MenuItem>
-        <MenuItem style={{backgroundColor: (colorId == "monokai" ? "lightblue" : "white")}} onClick={() =>{handleClose(); setColorSelected("monokai");}}>Monokai</MenuItem>
-        <MenuItem style={{backgroundColor: (colorId == "one_dark" ? "lightblue" : "white")}} onClick={() =>{handleClose(); setColorSelected("one_dark");}}>One Dark</MenuItem>
+        <MenuItem style={{backgroundColor: (colorId === "github" ? "lightblue" : "white")}} onClick={() =>{handleClose(); setColorSelected("github");}}>Github</MenuItem>
+        <MenuItem style={{backgroundColor: (colorId === "eclipse" ? "lightblue" : "white")}} onClick={() =>{handleClose(); setColorSelected("eclipse");}}>Eclipse</MenuItem>
+        <MenuItem style={{backgroundColor: (colorId === "dracula" ? "lightblue" : "white")}} onClick={() =>{handleClose(); setColorSelected("dracula");}}>Dracula</MenuItem>
+        <MenuItem style={{backgroundColor: (colorId === "cobalt" ? "lightblue" : "white")}} onClick={() =>{handleClose(); setColorSelected("cobalt");}}>Cobalt</MenuItem>
+        <MenuItem style={{backgroundColor: (colorId === "monokai" ? "lightblue" : "white")}} onClick={() =>{handleClose(); setColorSelected("monokai");}}>Monokai</MenuItem>
+        <MenuItem style={{backgroundColor: (colorId === "one_dark" ? "lightblue" : "white")}} onClick={() =>{handleClose(); setColorSelected("one_dark");}}>One Dark</MenuItem>
 
       </Menu>
       </>

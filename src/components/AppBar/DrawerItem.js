@@ -8,29 +8,22 @@ import ListItemText from "@mui/material/ListItemText";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import DrwerInnerItem from './DrwerInnerItem';
+import DrwaerSection from './DrwaerSection';
 
 const DrawerItem = ({arr,arrTable}) => {
       const [drawerIcon,setDrawerIcon] = React.useState(false);
 
   return (
     <>
-    <List>
+      <h1 className="h1_head_table" style={{textAlign:"center"}}> TABLES </h1> 
+      <Divider style={{backgroundColor:"black"}}/>
+      <List>
         {
           arr.map((text, index) => (
-              <ListItem key={text} >
-                <ListItemButton>
-                  <ListItemIcon>
-                    {drawerIcon ? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}
-                  </ListItemIcon>
-                 
-                    <ListItemText primary={text} />
-                    <DrwerInnerItem text={text} arrTable={arrTable} />
-                 
-                </ListItemButton>
-              </ListItem>
+             <DrwaerSection text={text} index={index} arrTable={arrTable}/>
           ))
         }
-          </List>
+      </List>
     </>
   )
 }

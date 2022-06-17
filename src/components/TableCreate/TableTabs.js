@@ -1,22 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Editor from '../Editor/EditorMain';
 // import "react-tabs/style/react-tabs.css";
-import AddBoxIcon from '@mui/icons-material/AddBox';
 import './styles.css';
 import IconButton from "@mui/material/IconButton";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Button } from '@mui/material';
 
 export default function TableTabs() {
   const [arrHead, setArrHead] = React.useState(["Tab 1"]);
   const [arrBody, setArrBody] = React.useState([""]);
   const [arrResult, setArrResult] = React.useState([false]);
+  const [tabCount, settabCount] = React.useState(2);
+  const [colorOk, setColorOk] = React.useState(0);
+  const [showTabsList, setShowTabsList] = React.useState(true);
 
   const AddTabFunc = () => {
     setArrHead((prev) => {
-      const r = "Tab " + (arrHead.length+1);
+      const r = "Tab " + (tabCount);
+      settabCount(p => p + 1);
       return [...prev, r]
     })
     setArrBody((prev) => {
@@ -29,8 +32,8 @@ export default function TableTabs() {
   const editTabFunc = (index) => {
     const prompt = window.prompt("Enter new tab name");
     if(prompt){
-      if(prompt.length >= 4){
-        alert("Tab name must be less than or equal to 4 characters");
+      if(prompt.length >= 6){
+        alert("Tab name must be less than or equal to 6 characters");
       }
       else{
        arrHead[index] = prompt;
@@ -45,7 +48,7 @@ export default function TableTabs() {
     setArrBody(arrBody);
   }
   const deleteTabFunc = (index) => {
-    if(arrHead.length == 1){
+    if(arrHead.length === 1){
       alert("You can't delete the last tab");
     }
     else{
@@ -60,35 +63,37 @@ export default function TableTabs() {
     setArrResult([...arrResult]);}
     setArrHead([...arrHead]);
   }
+  const ClickTabFunc = (pt) =>{
+    setColorOk(pt);
+  }
+
   return (
     <div className="App">
       <Tabs>
-        <div>
+        {!showTabsList ? null : <div>
           <TabList>
           {
               arrHead.map((val,index) => {
-                  return <Tab>
-                  <p >{val}
-                  <IconButton >
-                    <EditIcon onClick={() => editTabFunc(index)}/>
+                  return <Tab onClick={() => ClickTabFunc(index)} style={{display:"flex",justifyContent: "space-between"}}>
+                  <p style={{fontWeight: "800"}}>{val} </p>
+                  <IconButton style={{display:"flex",justifyContent: "space-between",color : (colorOk === index ? "white" : "grey")}}>
+                    <EditIcon onClick={() => editTabFunc(index)} style={{paddingRight:"4px",color : (colorOk === index ? "white" : "grey")}} />
+                    <DeleteIcon onClick={() => deleteTabFunc(index) } style={{}}/>
                   </IconButton>
-                  <IconButton>
-                    <DeleteIcon onClick={() => deleteTabFunc(index) }/>
-                  </IconButton>
-                  </p>
                   </Tab>
               })
               
           }
           
           </TabList>
-          <TabList style={{height:"5%",padding:"0px"}}>
-            <button onClick={AddTabFunc} className="buttonCreateNewTab"> 
+          <TabList style={{height:"6%",padding:"0px"}}>
+            <Button onClick={AddTabFunc} variant="contained" color="success"> 
                 {/* <AddBoxIcon /> */}
-                ADD TAB
-            </button>
+                ADD TAB +
+            </Button>
           </TabList>
         </div>
+        }
         {
             arrBody.map((val,index) => {
                 return <TabPanel>
@@ -100,6 +105,7 @@ export default function TableTabs() {
                           setArrResult = {setArrResult}
                           arrResult={arrResult}
                           arrHead={arrHead}
+                          setShowTabsList={setShowTabsList}
                         />
                     </div>
                 </TabPanel>

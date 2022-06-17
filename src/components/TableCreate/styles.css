@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&display=swap');
 .headingAppBar{
-  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif !important;
+}
+.h1_head_table{
+  text-align: center;
+    padding: 12px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #0c3b69;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
 }
 .App {
     font-family: sans-serif;
@@ -40,19 +50,22 @@
   
   .react-tabs__tab {
     height: 40px;
+    
     list-style: none;
     padding: 12px 6px;
     cursor: pointer;
     border-bottom: 1px solid rgb(0, 255, 195);
-    color: black;
+    color: rgb(50, 50, 50);
+    display: flex;
+    align-items: center;
   }
   
   .react-tabs__tab--selected {
     background: #1976d2;
     border-color: #1c1d1f;
     border-bottom: 1px solid rgb(0, 255, 195);
-    border-left: 5px solid #4bdf52;
-    color: white;
+    /* border-left: 5px solid #4bdf52; */
+    color: white !important;
   }
   
   .react-tabs__tab-panel {
@@ -65,11 +78,11 @@
   }
   
   .react-tabs__tab {
-    padding-left: 24px;
+    padding-left: 5%;
   }
   
   .react-tabs__tab--selected {
-    padding-left: 21px;
+    padding-left: 5%;
   }
   
   .panel-content {
@@ -101,4 +114,12 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .leftMenuItemClass{
+    margin-right: 2px;
+    padding: 0px;
+    display: flex;
+  } 
 }

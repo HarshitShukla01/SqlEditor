@@ -18,7 +18,7 @@ import { Box } from "@mui/system";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { Divider } from "@mui/material";
 
-const Editor = ({arrBody,arrIndex,setArrBody,setArrResult,arrResult}) => {
+const Editor = ({arrBody,arrIndex,setArrBody,setArrResult,arrResult,setShowTabsList}) => {
   const [value, setValue] = React.useState(arrBody[arrIndex]);
   const [displayResult, setDisplayResult] = React.useState(arrResult[arrIndex]);
   const onChange = (newValue) => {
@@ -51,8 +51,8 @@ const Editor = ({arrBody,arrIndex,setArrBody,setArrResult,arrResult}) => {
   }
   return (
     <>
-        <div style={{display: "flex" ,justifyContent: "space-between",paddingLeft:"5px",paddingRight:"5px"}}>
-        <div>    
+        <div style={{display: "flex" ,justifyContent: "space-between",paddingLeft:"5px",paddingRight:"5px",borderBottom:"1px solid black"}}>
+        <div className="leftMenuItemClass">    
           <Tooltip title="Refresh Data" placement="top">
           <IconButton onClick={refreshDataFunc}>
              <RefreshIcon  style={{backgroundColor:"rgb(25 118 210)" , borderRadius:"50%", padding:"1px",color:"white"}}/>
@@ -63,14 +63,20 @@ const Editor = ({arrBody,arrIndex,setArrBody,setArrResult,arrResult}) => {
               <ContentCopyIcon style={{color:"rgb(25 118 210)"}}/>
           </IconButton>
           </Tooltip>
+          <Button 
+          variant="outlined" 
+          color="success" 
+          sx={{marginLeft:"10px",marginTop:"1px",border: "2px solid",fontWeight: "bold",paddingBottom:"2px"}}
+          onClick={() => setShowTabsList(p => !p)}>TABS</Button>
+
           <DropMenu setTheme={setTheme}/>
           </div>
          <div >
           <Button 
            onClick={onSubmit} 
-            variant="outlined"
+            variant="contained"
             color="success"
-            style={{marginTop:"3px"}}
+            style={{marginTop:"1.5px",border: "1px solid",fontWeight: "bold"}}
           // className="buttonQuerySubmit"
            >Run Query<PlayArrowIcon/>
            </Button>
