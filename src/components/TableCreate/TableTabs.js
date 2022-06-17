@@ -14,7 +14,12 @@ export default function TableTabs() {
   const [arrResult, setArrResult] = React.useState([false]);
   const [tabCount, settabCount] = React.useState(2);
   const [colorOk, setColorOk] = React.useState(0);
-  const [showTabsList, setShowTabsList] = React.useState(true);
+  const intialValueChkFunc = () => {
+    const deviceWidth = window.innerWidth;
+    if (deviceWidth < 768) return false;
+    return true;
+  }
+  const [showTabsList, setShowTabsList] = React.useState(intialValueChkFunc());
 
   const AddTabFunc = () => {
     setArrHead((prev) => {
@@ -70,14 +75,14 @@ export default function TableTabs() {
   return (
     <div className="App">
       <Tabs>
-        {!showTabsList ? null : <div>
+        {!showTabsList ? null : <div className="divLeftTab">
           <TabList>
           {
               arrHead.map((val,index) => {
                   return <Tab onClick={() => ClickTabFunc(index)} style={{display:"flex",justifyContent: "space-between"}}>
                   <p style={{fontWeight: "800"}}>{val} </p>
                   <IconButton style={{display:"flex",justifyContent: "space-between",color : (colorOk === index ? "white" : "grey")}}>
-                    <EditIcon onClick={() => editTabFunc(index)} style={{paddingRight:"4px",color : (colorOk === index ? "white" : "grey")}} />
+                    {/* <EditIcon onClick={() => editTabFunc(index)} style={{paddingRight:"4px",color : (colorOk === index ? "white" : "grey")}} /> */}
                     <DeleteIcon onClick={() => deleteTabFunc(index) } style={{}}/>
                   </IconButton>
                   </Tab>
@@ -86,7 +91,7 @@ export default function TableTabs() {
           }
           
           </TabList>
-          <TabList style={{height:"6%",padding:"0px"}}>
+          <TabList style={{height:"6%",padding:"1px",border:"0px",}}>
             <Button onClick={AddTabFunc} variant="contained" color="success"> 
                 {/* <AddBoxIcon /> */}
                 ADD TAB +

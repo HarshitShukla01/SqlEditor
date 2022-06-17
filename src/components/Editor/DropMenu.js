@@ -6,7 +6,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 export default function DropMenu({setTheme}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const [colorId, setColorId] = React.useState("github");
+  const [colorId, setColorId] = React.useState("cobalt");
   const setColorSelected = (e) =>{
     setColorId(e);
     setTheme(e);
@@ -25,6 +25,7 @@ export default function DropMenu({setTheme}) {
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
         variant="outlined"
+        className="marginLeftDeviceClass"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         sx={{marginLeft:"10px",marginTop:"1px",paddingRight:"4px",border: "2px solid",fontWeight: "bold",paddingBottom:"2px"}}
