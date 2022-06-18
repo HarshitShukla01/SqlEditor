@@ -16,6 +16,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import Tooltip from '@mui/material/Tooltip';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { Divider } from "@mui/material";
+// const EditorRender = React.lazy(() => import("./EditorRender"));
 
 const Editor = ({arrBody,arrIndex,setArrBody,setArrResult,arrResult,setShowTabsList}) => {
   const [value, setValue] = React.useState(arrBody[arrIndex]);

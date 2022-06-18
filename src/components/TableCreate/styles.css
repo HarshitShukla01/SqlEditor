@@ -126,16 +126,16 @@
   .divLeftTab{
     position: absolute;
     z-index: 500;
-    height: 93vh;
+    height: 91%;
   }
   .marginLeftDeviceClass{
     margin-top: 5px !important;
     margin-bottom: 5px !important;
 
   }
-  .refreshIconClass{
-    /* margin-left: -11px !important; */
-  }
+  /* .refreshIconClass{
+    margin-left: -11px !important;
+  } */
   .querySubmitButton{
     padding: 5px !important;
   }
@@ -146,7 +146,7 @@
   .runBtnShowClass{
     display: none;
   }
-  .tabButtonShowClass{
+  /* .tabButtonShowClass{
 
-  }
+  } */
 }

@@ -6,7 +6,6 @@ import Navbar from './components/AppBar/NavbarMain';
 import TableTabs from './components/TableCreate/TableTabs'
 
 const App = () => {
-  const [queryValue, setQueryValue] = React.useState("");
 
   return (    
     <>
