@@ -32,3 +32,7 @@ HTML, CSS, JavaScript , React , Material UI
 + From browser access the website at localhost with port 3000
 
 ## Page Loading Time
+
+![gitupload1](https://user-images.githubusercontent.com/75080333/174463795-cb2b12fd-064c-4e41-9167-8507e9caaf1f.jpg)
+![gitupload2](https://user-images.githubusercontent.com/75080333/174463805-d1740d03-65d3-49d9-8ece-e0b1d4692250.jpg)
+
