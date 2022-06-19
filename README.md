@@ -12,6 +12,7 @@ Website : https://sql-editor-pro.web.app
 - User can download the result in csv format or directly print the result.
 - User can choose among different themes for thier editor.
 - User copy query using copy button
+- It can render large files without breaking the browser
 
 ## Skills
 HTML, CSS, JavaScript , React , Material UI
