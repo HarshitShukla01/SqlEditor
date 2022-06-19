@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { temporarydata , customerColumn} from "./TempData";
 // import Container from "@mui/material/Container";
