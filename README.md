@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# SQL EDITOR
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React based web application for running SQL query.
 
-## Available Scripts
+Website : https://sql-editor-pro.web.app
 
-In the project directory, you can run:
+## Features
+- It is a responsive website
+- In this a user can create or delete new Tabs that help to run multiple quries parallely.
+- User can view all Table and theier column (in a tree like fashion).
+- User can search , filter or sort data.
+- User can download the result in csv format or directly print the result.
+- User can choose among different themes for thier editor.
+- User copy query using copy button
+- It can render large files without breaking the browser
 
-### `npm start`
+## Skills
+HTML, CSS, JavaScript , React , Material UI
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## React Library Used
+- react-ace
+- react-tabs
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How To Run
++ Download ZIP folder from [HERE](https://github.com/HarshitShukla01/SqlEditor/archive/refs/heads/main.zip)
++ Extract the ZIP
++ Open folder in code Editor
++ Open terminal in current folder
++ Type `npm install`
++ Then, type `npm run start`
++ From browser access the website at localhost with port 3000
 
-### `npm run build`
+## Page Loading Time
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+GT METRIX GRADE [(Click to visit website)](https://gtmetrix.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![sq1](https://user-images.githubusercontent.com/75080333/174466041-aa53b450-b170-4f6c-b8fa-2be1259188d8.png)
+![sq2](https://user-images.githubusercontent.com/75080333/174466042-cd87f001-d094-42e4-ba4b-191b3558c218.png)
+![sq3](https://user-images.githubusercontent.com/75080333/174466067-fb0497b9-d037-4208-bc64-7487be224d7f.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Pingdom Website Speed Test [(Click to visit website)](https://tools.pingdom.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![sq4](https://user-images.githubusercontent.com/75080333/174466049-e8ef1871-6088-499d-a03e-0189e46b4799.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+PageSpeed Insights [(Click to visit website)](https://pagespeed.web.dev/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![sq5](https://user-images.githubusercontent.com/75080333/174466045-489f7f07-84a0-42d9-a998-4e90b26679d9.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Step for optimization
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- I removed extra modules that is imported but never used
+- Using Ace-editor instead of Code Mirror for creating editor because rendering time of code mirror is higher than ace-editor
+- I used firebase to deploy the website because what ever file we upload is cached on SSDs at CDN edges around the world and served as gzip or Brotli
