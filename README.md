@@ -33,6 +33,23 @@ HTML, CSS, JavaScript , React , Material UI
 
 ## Page Loading Time
 
-![gitupload1](https://user-images.githubusercontent.com/75080333/174463795-cb2b12fd-064c-4e41-9167-8507e9caaf1f.jpg)
-![gitupload2](https://user-images.githubusercontent.com/75080333/174463805-d1740d03-65d3-49d9-8ece-e0b1d4692250.jpg)
+GT METRIX GRADE [(Click to visit website)](https://gtmetrix.com/)
 
+![sq1](https://user-images.githubusercontent.com/75080333/174466041-aa53b450-b170-4f6c-b8fa-2be1259188d8.png)
+![sq2](https://user-images.githubusercontent.com/75080333/174466042-cd87f001-d094-42e4-ba4b-191b3558c218.png)
+![sq3](https://user-images.githubusercontent.com/75080333/174466067-fb0497b9-d037-4208-bc64-7487be224d7f.png)
+
+
+Pingdom Website Speed Test [(Click to visit website)](https://tools.pingdom.com/)
+
+![sq4](https://user-images.githubusercontent.com/75080333/174466049-e8ef1871-6088-499d-a03e-0189e46b4799.png)
+
+PageSpeed Insights [(Click to visit website)](https://pagespeed.web.dev/)
+
+![sq5](https://user-images.githubusercontent.com/75080333/174466045-489f7f07-84a0-42d9-a998-4e90b26679d9.png)
+
+## Step for optimization
+
+- I removed extra modules that is imported but never used
+- Using Ace-editor instead of Code Mirror for creating editor because rendering time of code mirror is higher than ace-editor
+- I used firebase to deploy the website because what ever file we upload is cached on SSDs at CDN edges around the world and served as gzip or Brotli
